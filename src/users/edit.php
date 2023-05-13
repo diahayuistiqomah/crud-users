@@ -1,4 +1,9 @@
 <?php require_once '../templates/header.php'; 
+if ($checkSession && !isset($_SESSION['email'])) {
+    // Redirect ke halaman login jika belum login
+    header("Location: ./login.php");
+    exit();
+}
 
 $user = mysqli_query($conn, "SELECT * FROM users WHERE id = " . $_GET['id']);
 $user = mysqli_fetch_object($user);

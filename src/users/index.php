@@ -1,9 +1,17 @@
-<?php require_once '../templates/header.php'; ?>
+<?php require_once '../templates/header.php'; 
+if ($checkSession && !isset($_SESSION['email'])) {
+  // Redirect ke halaman login jika belum login
+  header("Location: ./login.php");
+  exit();
+}
+
+?>
 
 <div class="container">
   <h1 class="mt-4 mb-3">Data Pengguna</h1>
   <br>
   <a href="./tambah.php" class="btn btn-success mb-3">Tambah Pengguna</a>
+  <a href="./logout.php" class="btn btn-danger mb-3">Logout</a>
   <br>
   <div class="table-responsive">
     <table class="table">

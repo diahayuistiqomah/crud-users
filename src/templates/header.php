@@ -1,5 +1,19 @@
 <!DOCTYPE html>
-<?php require_once __DIR__.'/../db/connection.php';?>
+<?php require_once __DIR__.'/../db/connection.php';
+
+session_start();
+
+// Mendapatkan path dari URL yang diakses
+$path = $_SERVER['REQUEST_URI'];
+
+// Menentukan apakah perlu dilakukan pengecekan sesi
+$checkSession = false;
+if (strpos($path, '/crud-php/src/users/') !== false) {
+    // Jika URL mengandung '/crud-php/src/users/', maka perlu dilakukan pengecekan sesi
+    $checkSession = true;
+}
+
+?>
 <html lang="en">
 
 <head>

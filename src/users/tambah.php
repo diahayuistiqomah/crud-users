@@ -1,4 +1,10 @@
 <?php require_once '../templates/header.php'; 
+if ($checkSession && !isset($_SESSION['email'])) {
+    // Redirect ke halaman login jika belum login
+    header("Location: ./login.php");
+    exit();
+}
+
 
 if (isset($_POST['simpan'])) {
     $name = $_POST['name'];

@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Selamat datang!</h4>
-                        <p class="card-text">Masuk ke halaman <a href="./src/users">users</a>.</p>
+                        <p class="card-text">Silahkan login terlebih dahulu <a href="./src/users/login.php">Login</a>.</p>
                     </div>
                 </div>
             </div>
